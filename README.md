@@ -12,9 +12,8 @@ Here you can find the project information and the references:
 **Add project structure table**
 | Project | Path | Description| Project Type |
 |---------|------|------------|--------------|
-| Azure Function | [~\\PGPEncryption.AzureFunction\\](ttps://test.com) | This project is the main project containing the code of the funciton app. It contains four functions to encrypt/decrypt strings and files. | Azure Function App
-| Key Generator | [~\\PGPEncryption.KeyGenerator\\](ttps://test.com) | This project is generating the PGP private and public keys for your use. | Console App |
-
+| Azure Function | [~\\PGPEncryption.AzureFunction\\](https://github.com/davidbabayan/pgpencryption/tree/master/PGPEncryption.AzureFunction) | This project is the main project containing the code of the funciton app. It contains four functions to encrypt/decrypt strings and files. | Azure Function App
+| Key Generator | [~\\PGPEncryption.KeyGenerator\\](https://github.com/davidbabayan/pgpencryption/tree/master/PGPEncryption.KeyGenerator) | This project is generating the PGP private and public keys for your use. | Console App |
 
 <br/><br/>
 
@@ -388,6 +387,6 @@ func azure functionapp publish PgpEncryptionApp --nozip
 
 ```powershell
 az functionapp config appsettings set --name PgpEncryptionApp --resource-group PgpEncryptionResources --settings "AzureWebJobsStorage=$connectionstring"
-az functionapp config appsettings set --name PgpEncryptionApp --resource-group PgpEncryptionResources --settings "PublicKey=@Microsoft.KeyVault(VaultName=pgpencryptionkeys;SecretName=PublicKey)"
-az functionapp config appsettings set --name PgpEncryptionApp --resource-group PgpEncryptionResources --settings "PrivateKey=@Microsoft.KeyVault(VaultName=pgpencryptionkeys;SecretName=PrivateKey)"
+az --% functionapp config appsettings set --name PgpEncryptionApp --resource-group PgpEncryptionResources --settings "PublicKey=@Microsoft.KeyVault(VaultName=pgpencryptionkeys;SecretName=PublicKey)"
+az --% functionapp config appsettings set --name PgpEncryptionApp --resource-group PgpEncryptionResources --settings "PrivateKey=@Microsoft.KeyVault(VaultName=pgpencryptionkeys;SecretName=PrivateKey)"
 ```
